@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            ul{
+                display: none;
+            }
+            h1:hover+ul{
+                display: block;
+            }
+            ol{
+                display: none;
+            }
+            h2:hover+ol{
+                display: block;
+            }
+             
+            div{
+                display: none;
+            }
+            h3:hover+div{
+                display: block;
+            }
+            .ch{
+                display: none;
+            }
+            .child:hover+ch{
+                display: block;
+            }
+        </style>
+
+    </head>
+    <body>
+         <h1>COMBINATORS</h1>
+            <ul>
+                <li>A combinator is something that explains the relationship between the selectors</li>
+                <li> A CSS selector can contain more than one simple selector</li>
+                <li>Between the simple selectors, we can include a combinator</li>
+            </ul>
+         <h2>TYPES OF COMBINATORS</h2>
+            <ol>
+                <li>Descendant combinator (space)</li>
+                <li>Child combinator (>)</li>
+                <li>Next sibling combinator (+)</li>
+                <li>Subsequent-sibling combinator (~)</li>
+            </ol>
+            
+
+        <h3 class="parent">1.Descendant combinator</h3>
+            <div class="st">
+                <p>It is represented by space( ) and it will selects the all elements of any level within the specifed element.</p>
+         
+                <p><b>Example:-</b></p>
+                < style ><br>
+                    div p { <br>
+                    background-color: yellow;<br>
+                    }<br>
+                < /style ><br>
+                <br>< div ><br>
+                        < p >Paragraph 1 in the div.< /p ><br>
+                        < p >Paragraph 2 in the div.< /p ><br>
+                        < section >< p >Paragraph 3 in the div.< /p >< /section ><br>
+                    < /div ><br>
+          
+                <br>< p >Paragraph 4. Not in a div.< /p ><br>
+                < p >Paragraph 5. Not in a div.< /p ><br>
+            </div>
+
+        <h3 class="child">2.Child combinator</h3>
+            <div class="ch">
+                <p>It is represented by (>) and it will selects only direct children of the specifed element.</p>
+             
+                <p><b>Example:-</b></p>
+                < style ><br>
+                    div > p {<br>
+                      background-color: yellow;<br>
+                    }<br>
+                    < /style ><br>
+               < div >
+                < p >Paragraph 1 in the div.< /p ><br>
+                < p >Paragraph 2 in the div.< /p ><br>
+                < section ><br>
+                  <!-- not Child but Descendant -->
+                  < p >Paragraph 3 in the div (inside a section element).< /p ><br>
+                < /section ><br>
+                <p>Paragraph 4 in the div.< /p ><br>
+              < /div ><br>
+              
+            <br>  < p >Paragraph 5. Not in a div.< /p ><br>
+              < p >Paragraph 6. Not in a div.< /p ><br>
+            </div>
+            <h3 class="child">3.Next sibling combinator</h3>
+            <div class="ch">
+                <p>The next sibling combinator is used to select an element that is directly after another specific element.
+                    <br><br>
+                    Sibling elements must have the same parent element, and "adjacent" means "immediately following".</p>
+             
+                <p><b>Example:-</b></p>
+                < style ><br>
+                    div+p {<br>
+                      background-color: yellow;<br>
+                    }<br>
+                    < /style ><br>
+               < div >
+                < p >Paragraph 1 in the div.< /p ><br>
+                < p >Paragraph 2 in the div.< /p ><br>
+                < section ><br>
+                  <!-- not Child but Descendant -->
+                  < p >Paragraph 3 in the div (inside a section element).< /p ><br>
+                < /section ><br>
+                <p>Paragraph 4 in the div.< /p ><br>
+              < /div ><br>
+              
+            <br>  < p >Paragraph 5. Not in a div.< /p ><br>
+              < p >Paragraph 6. Not in a div.< /p ><br>
+            </div>
+
+            <h3 class="child">4.subsequent-sibling combinator </h3>
+            <div class="ch">
+              <p>  The subsequent-sibling combinator selects all elements that are next siblings of a specified element.</p>
+             
+                <p><b>Example:-</b></p>
+                < style ><br>
+                    div~p {<br>
+                      background-color: yellow;<br>
+                    }<br>
+                    < /style ><br>
+               < div >
+                < p >Paragraph 1 in the div.< /p ><br>
+                < p >Paragraph 2 in the div.< /p ><br>
+                < section ><br>
+                  <!-- not Child but Descendant -->
+                  < p >Paragraph 3 in the div (inside a section element).< /p ><br>
+                < /section ><br>
+                <p>Paragraph 4 in the div.< /p ><br>
+              < /div ><br>
+              
+            <br>  < p >Paragraph 5. Not in a div.< /p ><br>
+              < p >Paragraph 6. Not in a div.< /p ><br>
+            </div>
+    </body>
+</html>
